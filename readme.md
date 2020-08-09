@@ -10,6 +10,7 @@
 ./gradlew publishReleasePublicationToShingkitRepository
 ```
 代码里配置的是本地目录，仅用作测试  
+
 3. 使用maven依赖测试
 修改`app/build.gradle`
 ```gradle
