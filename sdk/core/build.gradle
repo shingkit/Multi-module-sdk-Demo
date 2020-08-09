@@ -2,18 +2,21 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
-publishing {
-    publications {
-        Release(MavenPublication){
-            group = rootProject.ext.GROUP_ID
-            artifactId = 'core'
-            version = rootProject.ext.LIBRARY_VERSION
-            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar"))}
+afterEvaluate {
+    publishing {
+        publications {
+            Release(MavenPublication){
+                from components.release
+                group = rootProject.ext.GROUP_ID
+                artifactId = 'core'
+                version = rootProject.ext.LIBRARY_VERSION
+            }
         }
-    }
 
-    repositories rootProject.ext.REPO
+        repositories rootProject.ext.REPO
+    }
 }
+
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
