@@ -39,5 +39,5 @@ ext {
             url = 'http://maven.aliyun.com/nexus/content/groups/public/'
         }
     }
-    minify = false
+    minify = true
 }
