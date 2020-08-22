@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import me.shingkit.business.BusinessA;
 import me.shingkit.core.AppGlobal;
 
 public class SdkMainActivity extends AppCompatActivity {
@@ -19,5 +20,7 @@ public class SdkMainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppGlobal.getInstance().init(getApplicationContext());
+        BusinessA a = new BusinessA();
+        a.doSth();
     }
 }
